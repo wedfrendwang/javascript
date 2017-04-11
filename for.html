@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>for循环的实践</title>
+	</head>
+	<body>
+		
+		<h1>使用循环实践</h1>
+		
+		
+		<p id="p"></p>
+		
+	</body>
+	
+	
+	<script type="text/javascript">
+		/*
+		 * 
+		 * for循环的语句 
+		 * 
+		 * 
+		 * 明显知道循环需要执行多少次
+		 * 
+		 * //类似于foreach
+		 * 
+		 * for (var a in temp) {
+			a只是索引
+			
+			temp[a];
+			}
+		 * 
+		 * 
+		 *
+		 * 当我们不知道循环要执行多少次的时候
+		 * 
+		 * 
+		 * 		while(){}
+		 * 
+		 * 		do{} while{}
+		 * 
+		 * 
+		 * 		continue:跳出本次循环
+		 * 		break:结束本次循环
+		 * 
+		 * */
+		
+		var p = document.getElementById('p');
+		
+		
+		
+		var num = null;
+		for(var i=1;i<=9;i++){
+			
+			for (var j=1; j<=i;j++) {
+				
+				if(num == null){
+					num = i+"*"+j+'=' + i*j+'&nbsp&nbsp';
+				}else{
+				 num += i+"*"+j+'=' + i*j+'&nbsp&nbsp';}
+				
+				if(i == j){
+					num+="<br/>"
+//					continue;
+				}
+				
+				
+				
+			}
+			
+		}
+		
+		document.write(num);
+		
+		p.innerHTML=num;
+		
+	</script>
+</html>

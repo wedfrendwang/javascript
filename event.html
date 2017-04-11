@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	
+	<!--
+		
+		js中的事件机制
+		
+		按钮点击的事件   onclick   双击事件  ondblclick
+		
+		鼠标的移动事件：  onmouseover
+		
+		键盘的点击弹起事件   ：onkeyup  onkeydown onkeypress//系统还未接收
+		
+		焦点获取以及失去事件： onfocusout
+		
+		页面的事件：onload
+		
+		
+		
+	-->
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			div{
+				width: 100px; 
+				height: 100px; 
+				border: 1px solid orangered;
+				background: yellow;
+			}
+		</style>
+		
+		
+	</head>
+	<body>
+		
+		<h1>事件</h1>
+		
+		<h3>单击双击</h3>
+		<input type="button" id="" value="测试单击按钮" onclick="test();" />
+		
+		<input type="button" id="" value="测试双击按钮" ondblclick="test();" />
+		
+		<br />
+		
+		<h3>鼠标的移动</h3>
+		
+		<div id="di1" onmouseout="alert('im out')"  ></div>
+		
+		<h3>键盘的事件</h3>
+		
+		<input type="text" name="" id="" placeholder="键盘按钮按下并弹起的事件" onkeyup="alert('键盘按键弹起')"/>
+		
+		
+		<input type="text" name="" id="" value="" onfocus=""/>
+		<input type="text" name="" id="" value="" onblur=""/><!--丢失焦点-->
+		<input type="text" name="" id="" value="" onchange=""/><!--丢失焦点-->
+	</body>
+	
+	
+	<script type="text/javascript">
+			
+			function test(){
+				alert('9999');
+			}
+			
+			var div = document.getElementById('di1');
+			
+			div.onmouseover = function (){
+				div.style.width='101px';
+				div.style.height='101px';
+				div.style.border='1.5px solid green';
+				div.style.shadowOffsetX='3px';
+			}
+			
+		</script>
+		
+</html>
+
+
+<!--
+	
+	男性和女性最大的区别：
+	
+	男性不懂装懂，女性懂装不懂     is that true
+	
+-->

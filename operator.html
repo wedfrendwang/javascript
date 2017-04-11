@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>opertor运算符</title>
+	</head>
+	<body>
+		
+		<h1>运算符的实际应用</h1>
+		
+		<input type="button" name="" id="" value="a++" onclick="outA();"/>
+		
+		<br />
+		
+		<input type="button" value="++a" />
+		
+		<br />
+		
+		<input type="button" value="number" onclick="testNumber();" />
+		
+		<br />
+		
+		<h2>逻辑运算符</h2>
+		
+		
+		
+	</body>
+	
+	<script type="text/javascript">
+		/*
+		 
+		 * 
+		 * 运算符的使用
+		 * 
+		 * 
+		 * 1：算数运算符
+		 * 
+		 * 		+
+		 * 		-
+		 * 		*
+		 *		/
+		 * 		%
+		 * 
+		 * 		涉及内存的处理优化   a+=1   <===>  a = a+1;
+		 * 
+		 * 		另外运算符混合使用的时候，根据运算法则，先* / 后 + -
+		 * 
+		 * 
+		 * 		a++;//说说两种的区别：先使用，后累加
+		 * 
+		 * 		++a;//先累加后使用
+		 * 
+		 * 
+		 * 逻辑运算符：复习一下java等等
+		 * 
+		 * 	非等值关系运算符：
+		 * 
+		 * 			>  =  <  >=    <=  !=   
+		 * 
+		 * 	等值关系运算符
+		 * 
+		 * 			==   等值符            先转换相同类型，在进行值的比较
+		 * 
+		 * 			===  等同符            先比较类型，类型相同在比较值，类型不同直接返回false
+		 * 
+		 *  js的内存分析：
+		 * 
+		 * 			堆内存：
+		 * 
+		 * 			栈内存：
+		 * 
+		 * 
+		 *  问题  [] == []?   {}=={}?
+		 * 
+		 * 
+		 *  逻辑运算符：
+		 * 
+		 * 			与&& 或|| 非!
+		 * 
+		 * 			短路与 &&（一个不符合条件，便不再进行下面的语句）
+		 * 			逻辑与  &
+		 * 
+		 * 逻辑判断语句
+		 * 
+		 * 			if(判断语句){执行为true的语句}else{执行不为true的语句}
+		 * 
+		 * 逻辑运算符：
+		 * 
+		 * 			switch(尽量不要使用string){
+		 * 				case 0:
+		 * 				break;
+		 * 
+		 * 				default:
+		 * 				break;
+		 * 			}
+		 * 
+		 * */
+		
+		
+		var a = 100;
+		console.log(a++);
+		console.log(++a);
+		function outA() {
+			console.log(a);
+		};
+		var num1 = 3000;
+		var num2 = 4000;
+		console.log(num1>num2);
+		
+		//再来进行别的比较
+		
+		var aa = 1;
+		var bb = '1';
+		var cc = true;
+		var dd = 'bbb';
+		var ee = 'true';
+		
+		console.log('aa == cc----'+(aa == cc));
+		
+		
+		console.log('cc----'+typeof cc);
+		console.log('aa----'+typeof aa);
+		//为true我们明白，当类型进行转化之后，两者可以比较
+		
+		/*但是为什么？？？*
+		 * 
+		 *在js中含有一个   系统默认函数 Number
+		 *
+		 * 
+		 * 数据类型比较像number靠拢
+		 * 
+		 * NaN自己都不等于自己的
+		 * 
+		 * NaN和任何数据进行  + - * / 都是NaN
+		 */
+		
+		
+		function testNumber(){
+			var aaa = '1000';
+			
+			/*在这里也解释了我在android中的一些疑问，应该是殊途同归的，当我的数据字段转化不了的时候也会有相应的错误*/
+			
+			var bbb = 'aaaaaa';
+			console.log('bbb---------'+Number(bbb));
+			alert(Number(aaa));
+		}
+		
+		
+		
+	</script>
+	
+	
+</html>

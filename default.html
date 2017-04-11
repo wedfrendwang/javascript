@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+		
+		/*变量的范围：
+		
+		1.函数之外的成为全局变量   var
+		
+		2.函数之内的成为局部变量  var
+		
+		3.借用window对象声明全局变量  window.pass = '123456';
+		
+		4.函数内部定义变量的时候，使用var 声明为局部变量，即只在该函数中有效
+		
+			但是不声明的时候，在调用第一次之后即变为全局变量
+			
+			
+			
+		变量类型：
+		
+		弱类型：声明时候统一使用var
+		
+		但是赋值的时候，需要制定相应的类型
+		
+		alert(typeof *);可以查看的你的类型
+		
+		另外的补充：  null 表示什么，一个object类型
+		
+		当一个变量声明不赋值的时候，那么他是  undefine 类型
+		
+		据查询：undefine是object的一个特殊的形式
+		
+		
+		boolean、number（int double）、string、
+		
+		
+		
+		number--------Infinity
+		number--------NaN
+		
+		
+		6种数据类型：
+		undifine
+		null
+		boolean
+		string
+		number
+		NaN
+		object
+		* */
+			var age = 3000;
+			
+			var age = 4000;
+			
+			console.log(age);
+			
+			window.pass = '123456';
+			
+			console.log(pass);
+			
+			
+			function getname(){
+				
+				email = 'wedfrend@163.com';
+				var name = 'wangxiaobo';
+				alert(name);
+				
+				
+			};
+			
+			function getEmail(){
+				
+				var a = false;
+				
+				alert(typeof a);
+				
+				
+				var a = 1/0;
+				console.log(typeof a +'--------'+a);
+				
+				var n = NaN;
+				
+				console.log(typeof n +'--------'+n);
+			};
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<h1>变量声明以及变量的类型</h1>
+		
+		<input type="button" name="" id="" value="测试局部变量" onclick="getname();" />
+		
+		<input type="button" name="" id="" value="全局变量" onclick="getEmail();" />
+		
+	</body>
+</html>

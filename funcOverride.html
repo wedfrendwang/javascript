@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		
+		重载：名相同，参不同，返回值相同
+		
+		
+		
+	-->
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			/**
+			 * 
+			 *在js中，实参和形参可以不同
+			 *
+			 * 如何实现函数的重载
+			 * 
+			 * js弱语言
+			 * 
+			 * 参数的类型，参数的个数
+			 * 
+			 * 所以按照java的那一套是不行的，所以，需要怎么办，达到重载的效果呢？
+			 * 
+			 * 根据实际情况书写自己的判断，结合arguments.length属性
+			 * 
+			 *	之所以能够使用这种方法：我个人的理解源于js规范中不要求形参实参一一对应
+			 */
+			
+			function sayHello(){
+				
+				var args = arguments.length;
+				
+				if(args == 1){
+					
+					if(typeof args[0]=="string" ){
+						console.log('加载含有一个参数并且参数类型是string的方法');
+					}else if(typeof args[0]=="number"){
+						console.log('加载含有一个参数并且参数类型是number的方法');
+					}
+				}else if(args == 2){
+					console.log('加载含有两个参数的方法');
+				}else{
+					console.log('暂无处理方式');
+				}
+				
+			}
+			
+			
+			function test(){
+				alert('我是个没有参数的数据');
+			}
+			
+			function test(a,b){
+				alert('我是含有两个参数');
+			}
+			
+			function test(a,b,c){
+				alert("我的形参为["+test.length+"],而我传入的实际参数为["+arguments.length+"]");
+			}
+			
+			test(1);
+			
+			sayHello();
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<h1>函数的重载</h1>
+		
+	</body>
+</html>

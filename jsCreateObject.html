@@ -15,18 +15,83 @@
 //				factory.learn();
 
 
-				var stu = new Student('wedfrend',33);
-				stu.learn();
+				//构造函数方式
+//				var stu = new Student('wedfrend',33);
+//				stu.learn();
 
 
-			//原型模式
+				//原型模式
+				
+//				var tea = new Teacher();
+//				console.log(tea.age+'----'+tea.name+'----'+tea.hobby);
+
+
+				//混合的构造函数和原型
+			
+				var person = new Person('wedfrend',24,'男');
+				person.say();
 			
 			
+				var dog = new Dog('wedfrend');
+				dog.run();
+				
+			}
+			
+			/**
+			 * 动态模式
+			 * @param {Object} name
+			 */
+			function Dog(name){
+				this.name = name;
+				
+			};
+			//进行判定，防止重复
+			if(typeof Dog._run == 'undefined'){
+				
+				Dog.prototype.run = function(){
+					alert(this.name +'dogdogdog');
+				}
+				//判定过后，别人就不再进行设置
+				Dog._run = true;
 				
 			}
 			
 			
 			
+			/**
+			 * 混合模式
+			 * @param {Object} name
+			 * @param {Object} age
+			 * @param {Object} sex
+			 */
+			function Person(name,age,sex){
+				
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+				
+			};
+			Person.prototype.say = function(){
+				console.log(this.name+"say hello");
+			};
+			
+			
+			
+			
+			
+			/**
+			 * 原型模式
+			 * 
+			 * 
+			 *
+			 * 每一个函数都有一个名为   prototype 的属性
+			 * 
+			 * 是一个指针，包含所有共有的属性
+			 */
+			function Teacher(){}
+			Teacher.prototype.name = '王晓波';
+			Teacher.prototype.age = 33;
+			Teacher.prototype.hobby = ['book','write'];
 			
 			
 			/**
@@ -34,9 +99,11 @@
 			 * 构造函数方式
 			 * @param {Object} name
 			 * @param {Object} age
-			 */
+			 
+			 * 
+			 * */
 			function Student(names,ages){
-				
+				//这里面的参数表示公有变量
 				this.age = ages;
 				this.name = names;
 				this.learn = function(){

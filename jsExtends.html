@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			function Person(){
+				this.eyes = 'blank';
+			}
+			Person.prototype.speak = function(name){
+				alert(name + '我说的是中国话');
+			};
+			
+			function Me(name,age){
+				this.name = name;
+				this.age = age;
+				
+			};
+			//先继承，在实现自己的原型
+			Me.prototype = Person.prototype;
+			Me.prototype.high = function(){
+				console.log('我的身高1.7m');
+			};
+			Me.prototype.speak = function(){
+				console.log('我');
+			};
+			
+			function jsExtends(){
+				var me = new Me('wedfrend',29);
+				me.high();
+				me.speak(me.name);
+			}
+		</script>
+		
+	</head>
+	<body>
+		
+		<h1>JS的继承实现</h1>
+		
+		<input type="button" id="" value="测试效果" onclick="jsExtends();" />
+		
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/**
+			 * 工厂方式的创建
+			 */
+			function createObject(){
+				
+//				var factory = new createFactory('wedfrend',28);
+//				
+//				factory.learn();
+
+
+				var stu = new Student('wedfrend',33);
+				stu.learn();
+
+
+			//原型模式
+			
+			
+				
+			}
+			
+			
+			
+			
+			
+			/**
+			 * 
+			 * 构造函数方式
+			 * @param {Object} name
+			 * @param {Object} age
+			 */
+			function Student(names,ages){
+				
+				this.age = ages;
+				this.name = names;
+				this.learn = function(){
+					alert(this.name+this.age);
+				}
+			}
+			
+			
+			/**
+			 * 创建工厂模式
+			 * @param {String} name
+			 * @param {Number} age
+			 */
+			function createFactory(name,age){
+				//创建object对象
+				var o = new Object();
+				//设置属性
+				o.name = name;
+				o.age = age;
+				o.learn = function (){
+					//做事情;
+					console.log(o.name + o.age);
+				}
+				//返回对象
+				return o;
+			}
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<h1>创建对象的5种方式</h1>
+		
+		<input type="button" id="" value="test" onclick="createObject();" />
+		
+	</body>
+</html>

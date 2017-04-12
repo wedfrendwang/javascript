@@ -33,22 +33,35 @@
 			function sayHello(){
 				
 				var args = arguments.length;
+				console.log(args);
 				
 				if(args == 1){
 					
-					if(typeof args[0]=="string" ){
+					if(typeof arguments[0]=="string" ){
 						console.log('加载含有一个参数并且参数类型是string的方法');
-					}else if(typeof args[0]=="number"){
+					}else if(typeof arguments[0]=="number"){
 						console.log('加载含有一个参数并且参数类型是number的方法');
 					}
 				}else if(args == 2){
 					console.log('加载含有两个参数的方法');
+					
+					alert(arguments[0]+''+arguments[1]);
 				}else{
 					console.log('暂无处理方式');
+					test();
 				}
 				
 			}
 			
+			
+			/*
+			 * 
+			 * 杂记：之前说过，html使用的是流处理模式
+			 * 
+			 * 那么，代码一般情况下是按照顺序进行执行，所以这样的声明式没有作用的
+			 * 
+			 * 在函数代码中，使用特殊对象 arguments，开发者无需明确指出参数名，就能访问它们。
+			 * */
 			
 			function test(){
 				alert('我是个没有参数的数据');
@@ -72,6 +85,8 @@
 	<body>
 		
 		<h1>函数的重载</h1>
+		
+		<input type="button" id="" value="点击测试" onclick="sayHello(1208,'wedfrend');" />
 		
 	</body>
 </html>

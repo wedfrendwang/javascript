@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	
+	<!--
+		js的内置对象
+		
+		Array
+		Boolean
+		Date
+		
+			date对象中的方法很多
+		
+		Math
+		
+			属性：PI E
+			
+			方法： abs():幂等
+				 round():四舍五入
+				 floor():向下取整
+				 ceil():向上取整
+				 pow(**,**)
+				 sqrt(*);
+				 
+				 random():获取随机数[0,1)
+		
+		Number
+		String
+		RegExp
+		Functions
+		Events
+	-->
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			
+			function testDate(){
+				//测试日期的方法;
+				
+				var date0 = new Date();
+				
+				var date1 = new Date(2015,2,2,11,11,11);
+				
+				console.log(date0.getYear()+'\n'+date0.getFullYear());
+				
+				console.log(date0.getMonth()+1+'\n');
+				
+				console.log(date0.getDate()+'\n');
+				
+				console.log(date0.getDay()+'\n');
+				
+				console.log(date0.getHours()+'\n');
+				
+				console.log(date0.getMinutes()+'\n');
+				
+				console.log(date0.getSeconds()+'\n');
+				
+				console.log(date0.getMilliseconds()+'\n');
+				
+				console.log(date0.getTime()+'\n');
+				
+				
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<h1>内置对象测试</h1>
+		
+		<input type="button" id="" value="测试日期" onclick="testDate();" />
+		
+	</body>
+</html>

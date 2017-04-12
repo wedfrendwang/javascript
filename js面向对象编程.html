@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<!--
+		
+		ECMA：无序属性的集合
+		
+		封装，继承，多态
+		
+		Object对象     自带方法     
+		
+				   toString();
+				   
+				   valueOf();
+				   
+		
+		
+	-->
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testObject() {
+
+				var o = new Object();
+
+				o.name = 'wangxiaobo ';
+
+				delete o.name;
+
+				alert(o.name);
+
+			}
+			
+			/**
+			 * 私有变量
+			 */
+			
+			function testPrivate(){
+				
+				
+				var name = 'wedfrend';
+				
+				var run = function (){
+					alert(name);
+				}
+				
+				this.all = function(){
+					return name;
+				}
+				
+			}
+			
+			
+			/**
+			 * 静态变量
+			 */
+			
+			function testStatic(){
+			}
+			testStatic.name = 'wedfrend wang';
+			testStatic.run = function (){
+				console.log(name);
+			}
+			
+			
+			/**
+			 * 共有饿，需要实例化进行调用的方式
+			 */
+			
+			function testImpl(){
+				
+				this.name = 'wangxiaobo';
+				this.run = function (){
+					console.log(name);
+				};
+				
+			}
+			
+			var impl = new testImpl();
+			
+			console.log(impl.name);
+			
+			
+			var privates = new testPrivate();
+			
+			console.log(privates.all());
+			
+		</script>
+	</head>
+
+	<body>
+		<h1>王晓波</h1>
+		<input type="button" id="" value="Object测试" onclick="testObject()" />
+	</body>
+
+</html>

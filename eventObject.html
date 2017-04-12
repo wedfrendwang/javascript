@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	
+	<!--
+		
+		实践对象
+		
+		
+		
+	-->
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			/*
+			 * 兼容：各大浏览器厂商的产品自然有它的差异化，物竞天择，适者生存
+			 * 
+			 * 其实有时候感觉大多数的功能应用都差不多，为什么还会有这么多的雷同作品，没办法
+			 * 
+			 * 跟卖东西一样，都有着自己的市场。
+			 * 
+			 * */
+			
+			function mouseEvent(event){//这里传递一个参数，因为有不同浏览器的差异，firefox
+				
+				var eve = window.event||event;
+				
+				
+				//在firefox中还是存在适配的问题
+				
+				var x = eve.x || eve.pageX;
+				
+				var y = eve.y || eve.pageY;
+				
+				console.log("坐标点的x="+x+"，y="+y);
+				
+//				alert(eve);
+				
+			}
+			
+			
+			function onKeyMove(event){
+				
+				//键盘的移动事件的操作
+				
+				var onkey = window.event || event;
+				
+				var code = onkey.charCode || onkey.keyCode;
+				
+				console.log(code);
+				
+				
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<h1>事件对象</h1>
+		
+		
+		<div id="box" style="width: 500px; height: 300px; border: 1px solid;" onmousemove="mouseEvent(event);"></div>
+		
+		
+		<br />
+		
+		<input type="text" name="" id="" value="" placeholder="输入用户名" onkeyup="onKeyMove(event);"/>
+		
+	</body>
+</html>

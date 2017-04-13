@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	
+	<!--
+		
+		browser的4中方法
+		
+		后面会很常用
+		
+		1：js如何实现定时执行
+		
+		setTimeout   //重复一次
+		
+		
+		setInterval  //重复循环执行
+		
+		
+	-->
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			
+			function img(a){
+				
+				var i;
+				console.log(i);
+				
+				
+				if(typeof i == 'undefined'){
+					i = 1;
+				}
+				
+				console.log(i);
+				
+				i++;
+				
+				a.src = "img/"+i+".jpg";
+				
+				if(i == 5){
+					i = 1;
+				}
+				
+			};
+			var timeOutId = 0;
+			
+			function setTimeouts(){
+				var aaa = document.getElementById("imgs");
+				timeOutId = window.setTimeout(img(aaa),2000);
+			}
+			
+			
+			
+			function set(){
+				console.log(Math.random());
+			};
+			
+			
+			var intervalId = 0;
+			function setIntervals(){
+				var aaa = document.getElementById("imgs");
+				var i =1;
+				
+				 intervalId = window.setInterval(
+					function (){
+						
+						console.log(Math.random());
+						console.log(i);
+						aaa.src = "img/"+i+".jpg";
+						i= i+1;
+						if(i == 6){
+							i = 1;
+						}
+				},2000);
+				
+			};
+			
+			
+			function closeTimeouts(){
+				window.clearTimeout(timeOutId);
+			};
+			
+			function closeIntervals(){
+				window.clearInterval(intervalId);
+			};
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		
+		<h1>使用browser的4中方法事件</h1>
+		
+		<img src="img/1.jpg" width="500px" height="400px" id="imgs"/>
+		
+		<br /><br />
+		
+		<input type="button" id="" value="启动一次执行" onclick="setTimeouts();" /><br />
+		
+		
+		<input type="button" id="" value="启动多次执行" onclick="setIntervals();" />
+		
+		<br /><br />
+		
+		<input type="button" id="" value="关闭一次执行" onclick="closeTimeouts();" /><br />
+		
+		
+		<input type="button" id="" value="关闭多次执行" onclick="closeIntervals();" />
+		
+		
+		
+	</body>
+</html>

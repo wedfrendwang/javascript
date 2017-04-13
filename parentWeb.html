@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	
+	<!--
+		
+		父窗口
+		
+		
+		子页面调用父页面的方法
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function openChild(){
+				
+				window.open('childWeb.html','child','width=400,height=400,left=300,top=100,toolbar=no,menubar=no,resizable=no,scrollbars=no,location=no,status=no')
+				
+			}
+			
+			function sayHello(){
+				alert('i am say hello!!!');
+			}
+		</script>
+		
+	</head>
+	<body>
+		
+	<h1>我是父窗口</h1>
+	
+	<input type="button" id="" value="打开子窗口" onclick="openChild();" />
+		
+	</body>
+</html>

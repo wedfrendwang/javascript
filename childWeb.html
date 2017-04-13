@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		
+		子窗口:
+		
+		
+		注意子页面不能是直接打开的
+		
+	-->
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function closeChild() {
+
+				window.close();
+			}
+			
+			function getParentMethod(){
+				window.opener.sayHello();
+			}
+			
+		</script>
+
+	</head>
+
+	<body>
+
+		<h1>我是子窗口</h1>
+
+		<input type="button" id="" value="关闭子窗口" onclick="closeChild();" />
+		
+		<br />
+		<br />
+		
+		<input type="button" id="" value="调用父方法" onclick="getParentMethod();" />
+
+	</body>
+
+</html>

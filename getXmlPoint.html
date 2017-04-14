@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	
+	<!--
+		
+		在自己这个年轻的岁月里
+		
+		慢慢体会到世界上不止有黑与白
+		
+		还有灰
+		
+		慢慢的学会了妥协，对自己妥协，对工作妥协
+		
+		这是成长？还是无奈
+		
+		从你的全世界路过中有一段台词：下过雨的路面充满泥泞，但我们总要趟过去，而我只有一条命，我愿拼尽赚钱，努力工作
+		
+		让未来的苦难在也无法伤害到她！！！
+		
+		
+	-->
+	
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			
+			/*
+			 说说浏览器是如何获取节点的
+			 
+			 
+			 ECMAJavaScript
+			 
+			 BOM
+			 
+			 DOM  :  那么在js中如何获取节点呢
+			 
+			 
+			 		直接获取：
+			 		
+			 		通过ID
+			 		
+			 		通过标签
+			 		
+			 		通过class
+			 		
+			 		间接获取：
+			 		
+			 		通过div的样式设计获取
+			 		
+			 		querySelector、querySelectorAll
+			 
+			 
+			 * */
+			
+			
+			
+			/**
+			 * 
+			 * 操作节点的属性方法有两种
+			 * 
+			 * 
+			 * 节点.attribute   eg: name.value
+			 * 
+			 * 
+			 * 节点.setAttribute("key","value");
+			 * 节点.getAttribute("key");
+			 * 
+			 * 那么两种的区别在于：
+			 * 
+			 * 你说：区别在于什么地方呢?
+			 * 
+			 * 
+			 * 节点.属性的方法不能 获取到新增属性
+			 * 
+			 * 而
+			 * 
+			 * 节点.getAttribute("key")方法只能获取到defaultValue
+			 * 
+			 * 
+			 * 
+			 */
+			
+			
+			/*
+			 * 如何通过js操作css样式
+			 * 
+			 * 
+			 * 这里需要注意一下css和js的语法的差异：
+			 * 
+			 * 对于有 - 的这种属性
+			 * 
+			 * 如 background-color是不能在js中直接进行设置和使用的
+			 * 
+			 * 所以，css和js商量了一下，如果出现这种情况 
+			 * 
+			 * 那么使用  backgroundColor
+			 * 
+			 * 或者使用[background-color]
+			 * 
+			 * 
+			 * 操作文本的话使用属性  innerHTML
+			 * 
+			 * innerText
+			 * 
+			 * 
+			 * 
+			 * */
+			
+			
+			function showBorder(){
+				var div = document.getElementById('div');
+				div.className = 'ps';
+				div.style['background-color']="white";
+			};
+			
+			
+			function hideBorder(){
+				var div = 
+				document.getElementById('div');
+				div.className = "";
+				div.style.backgroundColor='red';
+			}
+			
+		</script>
+		
+		
+		<style type="text/css">
+			.ps{
+				/*border: 2px solid green;*/
+				
+				border-style: outset;
+				border-color: gold;
+				border-width: 10px;
+				
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<h1>通过JS来改变css</h1>
+		
+		<div id="div" onmouseout="hideBorder();" onmouseover="showBorder();" style="width: 200px; height: 300px; background-color: palegoldenrod;"></div>
+		
+	</body>
+</html>

@@ -22,6 +22,9 @@
 		<title></title>
 		<script type="text/javascript">
 			
+			
+			
+			
 			function testObject() {
 
 				var o = new Object();
@@ -49,7 +52,7 @@
 				}
 				
 				this.all = function(){
-					return name;
+					run();
 				}
 				
 			}
@@ -59,16 +62,16 @@
 			 * 静态变量
 			 */
 			
-			function testStatic(){
-			}
-			testStatic.name = 'wedfrend wang';
-			testStatic.run = function (){
-				console.log(name);
-			}
+			function TestStatic(){
+			};
+			TestStatic.sname = "wedfrend wang";
+			TestStatic.run = function (){
+				console.log(TestStatic.sname);
+			};
 			
 			
 			/**
-			 * 共有饿，需要实例化进行调用的方式
+			 * 共有，需要实例化进行调用的方式
 			 */
 			
 			function testImpl(){
@@ -78,7 +81,7 @@
 					console.log(name);
 				};
 				
-			}
+			};
 			
 			var impl = new testImpl();
 			
@@ -86,9 +89,9 @@
 			
 			
 			var privates = new testPrivate();
-			
-			console.log(privates.all());
-			
+			privates.all();
+//			console.log(privates.all());
+			TestStatic.run();
 		</script>
 	</head>
 

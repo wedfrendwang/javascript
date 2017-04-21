@@ -33,6 +33,7 @@
 			function sayHello(){
 				
 				var args = arguments.length;
+				console.log(typeof args+"------"+args);
 				console.log(args);
 				
 				if(args == 1){
@@ -72,7 +73,7 @@
 			}
 			
 			function test(a,b,c){
-				alert("我的形参为["+test.length+"],而我传入的实际参数为["+arguments.length+"]");
+				alert("我的形参为["+test.length+"],而我传入的实际参数为["+test.arguments.length+"]");
 			}
 			
 			test(1);

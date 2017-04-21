@@ -54,11 +54,15 @@
 			</div>
 		</div>
 		
+		<div id="four">
+			
+		</div>
+		
 	</body>
 	
 	<script type="text/javascript">
 		
-			var useCapture = true;//参数判断是冒泡还是捕获
+			var useCapture = false;//参数判断是冒泡还是捕获
 			
 			//默认是false,冒泡
 			//true，捕获
@@ -68,6 +72,8 @@
 			var two = document.getElementById('two');
 			
 			var three = document.getElementById('three');
+			
+			var fouor = document.getElementById('four');
 			
 			
 			one.addEventListener('click',function(event){
@@ -93,6 +99,20 @@
 			three.addEventListener('click',function(){
 				
 				alert('wedfrend3');
+				
+			},useCapture);
+			
+			fouor.addEventListener('click',function(event){
+				
+				alert('wedfrend4');
+				
+				//获取事件
+				var eve = window.event || event;
+				//终止冒泡
+				eve.cancelBubble = true;//针对IE
+				//其他的浏览器
+				eve.stopPropagation();	
+				
 				
 			},useCapture);
 			
